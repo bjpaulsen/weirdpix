@@ -12,6 +12,7 @@ const VALUE2 = 2;
 
 // Globals
 let canvasContainer;
+let activeBrush;
 
 // setup() function is called once when the program starts
 function setup() {
@@ -25,31 +26,19 @@ function setup() {
         resizeCanvas(canvasContainer.width(), canvasContainer.height());
     });
 
-    let centerHorz = windowWidth / 2;
-    let centerVert = windowHeight / 2;
+    activeBrush = new BasicBrush();
+
+    noStroke();
+    fill(0);
 }
 
-// draw() function is called repeatedly, it's the main animation loop
 function draw() {
-    background(220);    
-
-    // Put drawings here
-    let centerHorz = canvasContainer.width() / 2 - 125;
-    let centerVert = canvasContainer.height() / 2 - 125;
-    fill(234, 31, 81);
-    noStroke();
-    rect(centerHorz, centerVert, 250, 250);
-    fill(255);
-    textStyle(BOLD);
-    textSize(140);
-    text("p5*", centerHorz + 10, centerVert + 200);
 
 }
 
 function mousePressed() {
-    // code to run when mouse is pressed
 }
 
 function mouseDragged() {
-    // code to run when mouse is dragged
+    activeBrush.draw();
 }

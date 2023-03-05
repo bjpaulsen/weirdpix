@@ -3,7 +3,7 @@ class BasicBrush extends Brush {
         super();
     }
 
-    drawAtXY() {
+    drawAtXY(x, y) {
         ellipse(x, y, brushSize, brushSize);
     }
 }

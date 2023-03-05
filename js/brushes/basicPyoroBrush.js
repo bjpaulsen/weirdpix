@@ -5,7 +5,7 @@ class BasicPyoroBrush extends Brush {
         this.pyoro = loadImage('assets/images/pyoro.png');
     }
 
-    drawAtXY() {
+    drawAtXY(x, y) {
         image(this.pyoro, x, y, brushSize, brushSize);
     }
 }

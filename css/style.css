@@ -1,4 +1,8 @@
-/* style.css */
+html {
+    border: 0 0 0 0;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+}
 
 /* Set the canvas element to be the full size of the window */
 canvas {
@@ -14,6 +18,6 @@ body {
 }
 
 #canvas-container {
-    width: calc(100vw - 50px);
+    width: calc(100vw);
     height: calc(100vh - 100px);
 }

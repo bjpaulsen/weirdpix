@@ -2,43 +2,42 @@
 // Author: Your Name
 // Date:
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-const VALUE1 = 1;
-const VALUE2 = 2;
+// Constants
+let STROKE_WEIGHT = 4;
+let UI_COLOR = 0;
 
 // Globals
+let activeBrush; // the currently selected brush
 let canvasContainer;
-let activeBrush;
+let ui;
 
-// setup() function is called once when the program starts
+let backgroundColor = 255;
+
 function setup() {
     // place our canvas, making it fit our container
     canvasContainer = $("#canvas-container");
     let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
     canvas.parent("canvas-container");
-    // resize canvas is the page is resized
-    $(window).resize(function() {
-        console.log("Resizing...");
-        resizeCanvas(canvasContainer.width(), canvasContainer.height());
-    });
 
+    ui = new UI();
     activeBrush = new BasicBrush();
 
+    background(backgroundColor);
+    rectMode(CORNERS);
     noStroke();
+    strokeWeight(STROKE_WEIGHT);
     fill(0);
 }
 
 function draw() {
-
-}
-
-function mousePressed() {
+    ui.draw();
 }
 
 function mouseDragged() {
-    activeBrush.draw();
+    mousePressed();
+}
+
+function mousePressed() {
+    if (ui.withinDrawZone(mouseX, mouseY)) activeBrush.draw();
+    else ui.handleInteractions();
 }

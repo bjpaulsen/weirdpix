@@ -4,6 +4,6 @@ class BasicBrush extends Brush {
     }
 
     draw() {
-        ellipse(mouseX, mouseY, 20, 20);
+        ellipse(mouseX, mouseY, brushSize, brushSize);
     }
 }

@@ -16,23 +16,32 @@ let backgroundColor = 255;
 function setup() {
     // place our canvas, making it fit our container
     canvasContainer = $("#canvas-container");
-    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height(), WEBGL);
     canvas.parent("canvas-container");
 
     ui = new UI();
     brushes = [
-        new BasicBrush()
+        new BasicBrush(),
+        new BasicPyoroBrush(),
+        new AdvancedPyoroBrush()
     ];
-    activeBrush = brushes[0];
+
+    cam = createCamera();
+    cam.move((width/2),height/2,0);
+
+    activeBrush = brushes[2];
 
     background(backgroundColor);
     rectMode(CORNERS);
     noStroke();
     strokeWeight(STROKE_WEIGHT);
     fill(0);
+
+    
 }
 
 function draw() {
+    
     ui.draw();
 }
 

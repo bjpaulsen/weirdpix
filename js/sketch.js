@@ -4,6 +4,7 @@
 
 // Constants
 let STROKE_WEIGHT = 4;
+let UI_COLOR = 0;
 
 // Globals
 let activeBrush; // the currently selected brush
@@ -37,5 +38,6 @@ function mouseDragged() {
 }
 
 function mousePressed() {
-    if (ui.withinBounds(mouseX, mouseY)) activeBrush.draw();
+    if (ui.withinDrawZone(mouseX, mouseY)) activeBrush.draw();
+    else ui.handleInteractions();
 }

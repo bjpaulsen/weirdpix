@@ -7,10 +7,10 @@ let STROKE_WEIGHT = 4;
 let UI_COLOR = 0;
 
 // Globals
+let brushes;
 let activeBrush; // the currently selected brush
 let canvasContainer;
 let ui;
-
 let backgroundColor = 255;
 
 function setup() {
@@ -20,7 +20,10 @@ function setup() {
     canvas.parent("canvas-container");
 
     ui = new UI();
-    activeBrush = new BasicBrush();
+    brushes = [
+        new BasicBrush()
+    ];
+    activeBrush = brushes[0];
 
     background(backgroundColor);
     rectMode(CORNERS);

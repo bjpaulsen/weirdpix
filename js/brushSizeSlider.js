@@ -4,15 +4,17 @@ class BrushSizeSlider {
     constructor(ui) {
         this.min = 10;
         this.max = 200;
-        
-        this.padding = 20;
+                
         this.x1 = ui.x2+STROKE_WEIGHT/2;
         this.x2 = width;
+
         this.width = this.x2-this.x1;
         this.height = 400;
-        this.y2 = height - this.padding;
+
+        this.y2 = height - 20;
         this.y1 = this.y2 - this.height;
-        this.lineX = this.x1+this.width/2;
+
+        this.lineX = this.x1+this.width/2; // the x coordinate of the slider line
     }
 
     // draw the slider each frame

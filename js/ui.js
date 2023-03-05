@@ -5,13 +5,17 @@ class UI {
         this.x2 = width - 220;
         this.y2 = height-STROKE_WEIGHT/2;
 
-        this.brushSizeSlider = new BrushSizeSlider(this);
+        this.UIElements = [
+            new BrushSizeSlider(this)
+        ];
     }
 
     draw() {
         this.refreshUIZone();
         this.drawBox();
-        this.brushSizeSlider.draw();
+        this.UIElements.forEach(element => {
+            element.draw();
+        });
     }
 
     drawBox() {
@@ -36,6 +40,8 @@ class UI {
     }
 
     handleInteractions() {
-        if (this.brushSizeSlider.withinBounds(mouseX, mouseY)) this.brushSizeSlider.mousePressed();
+        this.UIElements.forEach(button => {
+            if (button.withinBounds(mouseX, mouseY)) button.mousePressed();
+        });
     }
 }

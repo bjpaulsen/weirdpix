@@ -2,12 +2,10 @@ let brushSize = 30;
 
 class BrushSizeSlider {
     constructor(ui) {
-        this.padding = 20;
         this.min = 10;
         this.max = 200;
-
-        this.lineShift = 50;
         
+        this.padding = 20;
         this.x1 = ui.x2+STROKE_WEIGHT/2;
         this.x2 = width;
         this.width = this.x2-this.x1;

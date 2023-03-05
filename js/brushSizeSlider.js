@@ -15,6 +15,7 @@ class BrushSizeSlider {
         this.lineX = this.x1+this.width/2;
     }
 
+    // draw the slider each frame
     draw() {
         push();
 
@@ -29,10 +30,12 @@ class BrushSizeSlider {
         pop();
     }
 
+    // returns true if the given coordinates are within the UI element's bounds
     withinBounds(x, y) {
         return x >= this.x1 && x <= this.x2 && y >= this.y1 && y <= this.y2;
     }
 
+    // adjusts the brush size when the player interacts with the slider
     mousePressed() {
         brushSize = map(constrain(mouseY, this.y1, this.y2), this.y2, this.y1, this.min, this.max);
     }

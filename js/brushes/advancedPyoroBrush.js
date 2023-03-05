@@ -3,14 +3,13 @@ class AdvancedPyoroBrush extends Brush {
     constructor() {
         super();
         this.pyoro = loadModel('assets/models/pyoro.obj');
-        this.callsTillSpray = 20;   
+        this.callsTillSpray = 0;   
     }
 
-    draw() {
-        
-        if(this.callsTillSpray >= 20){
+    drawAtXY(x, y) {
+        if (this.callsTillSpray <= 0) {
             push();
-            translate(mouseX, mouseY, 0);
+            translate(x, y-brushSize/2, 0);
             scale(brushSize/100);
             noStroke();
 
@@ -21,11 +20,12 @@ class AdvancedPyoroBrush extends Brush {
             fill(random(0,255),random(0,255),random(0,255));
             this.model = model(this.pyoro);
             pop();
-            this.callsTillSpray = 0;
+            this.callsTillSpray = 20;
         }
+        this.callsTillSpray--;
+    }
 
-        this.callsTillSpray++;
-
-        
+    resetTimer() {
+        this.callsTillSpray = 20;
     }
 }

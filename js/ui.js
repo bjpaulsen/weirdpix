@@ -1,9 +1,9 @@
 class UI {
     constructor() {
-        this.x1 = 150;
+        this.x1 = 100;
         this.y1 = STROKE_WEIGHT/2;
         this.x2 = width - 220;
-        this.y2 = height-STROKE_WEIGHT/2;
+        this.y2 = (height-STROKE_WEIGHT/2)-50;
 
         this.UIElements = [
             new BrushSizeSlider(this)
@@ -16,6 +16,7 @@ class UI {
         this.UIElements.forEach(element => {
             element.draw();
         });
+        
     }
 
     drawBox() {

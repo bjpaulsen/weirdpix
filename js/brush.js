@@ -2,10 +2,16 @@
 class Brush {
     constructor() {
         if (this.constructor == Brush)
-            throw new Error("You cannot create an instance of Abstract class Brush - create an instance of one of its subclasses.")
+            throw new Error("You cannot create an instance of Abstract class Brush - create an instance of one of its subclasses.");
     }
 
+    // do not override unless you have a good reason
     draw() {
-        throw new Error("Method 'draw' must be implemented by a subclass.")
+        this.drawAtXY(mouseX, mouseY);
+    }
+
+    // override this to implement a brush
+    drawAtXY(x, y) {
+        throw new Error("Method 'drawAtXY' must be implemented by a subclass.");
     }
 }

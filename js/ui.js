@@ -41,7 +41,7 @@ class UI {
 
     handleInteractions() {
         this.UIElements.forEach(element => {
-            if (element.withinBounds(mouseX, mouseY)) button.mousePressed();
+            if (element.withinBounds(mouseX, mouseY)) element.mousePressed();
         });
     }
 }

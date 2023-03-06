@@ -24,6 +24,7 @@ class BrushSizeSlider extends UIElement {
 
         // draw slider line
         stroke(UI_COLOR);
+        strokeWeight(STROKE_WEIGHT+1)
         line(this.lineX, this.y1, this.lineX, this.y2);
         
         // draw size circle

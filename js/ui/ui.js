@@ -10,14 +10,15 @@ class UI {
         // all the UI elements around the edges of the canvas
         this.UIElements = [
             new BrushSizeSlider(this),
+        ];
+        this.brushButtons = [
             // ADD ALL BRUSH BUTTONS YOU WANT ON THE UI HERE (I'm sorry i tried to find a better way but deepcloning is JANK in javascript)
             new BrushButton(this, new BasicBrush()),
             new BrushButton(this, new BasicPyoroBrush()),
             new BrushButton(this, new AdvancedPyoroBrush()),
             new BrushButton(this, new Eraser()),
         ];
-        // Select the starting brush
-        this.UIElements[1].select();
+        this.UIElements = this.UIElements.concat(this.brushButtons);
     }
 
     draw() {
@@ -52,8 +53,13 @@ class UI {
 
     handleInteractions() {
         this.UIElements.forEach(element => {
-            element.deselect();
-            if (element.withinBounds(mouseX, mouseY)) element.mousePressed();
+            if (element.withinBounds(mouseX, mouseY)) {
+                if (element instanceof BrushButton)
+                    // switch which brush is selected
+                    this.brushButtons.forEach(button => button.deselect());
+                element.mousePressed();
+                return;
+            }
         });
     }
 }

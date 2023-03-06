@@ -21,7 +21,6 @@ function setup() {
 
     // STEP 1: Add new brushes here
     // STEP 2: Add a BrushButton in ui.js constructor
-    // NOTE: Select the starting brush in ui.js constructor
     brushes = [
         new BasicBrush(),
         new BasicPyoroBrush(),
@@ -29,6 +28,8 @@ function setup() {
         new Eraser(),
     ];
     ui = new UI();
+    // Select the starting brush
+    ui.brushButtons[0].select();
 
     cam = createCamera();
     cam.move((width/2),height/2,0);

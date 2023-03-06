@@ -14,6 +14,7 @@ class UI {
             new BrushButton(this, new BasicBrush()),
             new BrushButton(this, new BasicPyoroBrush()),
             new BrushButton(this, new AdvancedPyoroBrush()),
+            new BrushButton(this, new Eraser()),
         ];
         // Select the starting brush
         this.UIElements[1].select();

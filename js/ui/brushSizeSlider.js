@@ -24,11 +24,11 @@ class BrushSizeSlider extends UIElement {
 
         // draw slider line
         stroke(UI_COLOR);
+        strokeWeight(STROKE_WEIGHT+1)
         line(this.lineX, this.y1, this.lineX, this.y2);
         
         // draw size circle
-        fill(backgroundColor);
-        ellipse(this.lineX, map(brushSize, this.min, this.max, this.y2, this.y1), brushSize);
+        ellipse(this.lineX, map(brushSize, this.min, this.max, this.y2, this.y1), brushSize, brushSize, 50);
 
         pop();
     }

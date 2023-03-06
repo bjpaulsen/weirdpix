@@ -19,7 +19,7 @@ class AdvancedPyoroBrush extends Brush {
             fill(random(0,255),random(0,255),random(0,255));
             this.model = model(this.pyoro);
             pop();
-            this.callsTillSpray = 30;
+            this.callsTillSpray = 20;
         }
         this.callsTillSpray--;
     }

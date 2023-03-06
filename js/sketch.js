@@ -3,7 +3,7 @@
 // Date:
 
 // Constants
-let STROKE_WEIGHT = 4;
+let STROKE_WEIGHT = 6;
 let UI_COLOR = 0;
 
 // Globals
@@ -21,6 +21,7 @@ function setup() {
 
     // STEP 1: Add new brushes here
     // STEP 2: Add a BrushButton in ui.js constructor
+    // NOTE: Select the starting brush in ui.js constructor
     brushes = [
         new BasicBrush(),
         new BasicPyoroBrush(),
@@ -28,7 +29,6 @@ function setup() {
         new Eraser(),
     ];
     ui = new UI();
-    activeBrush = brushes[0];
 
     cam = createCamera();
     cam.move((width/2),height/2,0);
@@ -37,9 +37,9 @@ function setup() {
     rectMode(CORNERS);
     noStroke();
     strokeWeight(STROKE_WEIGHT);
+    strokeCap(ROUND);
+    strokeJoin(ROUND);
     fill(0);
-
-    
 }
 
 function draw() {

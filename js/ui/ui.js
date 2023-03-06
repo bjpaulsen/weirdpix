@@ -5,7 +5,7 @@ class UI {
         this.x1 = 120;
         this.y1 = STROKE_WEIGHT/2;
         this.x2 = width - 220;
-        this.y2 = (height-STROKE_WEIGHT/2)-50;
+        this.y2 = (height-STROKE_WEIGHT/2);
 
         this.UIElements = [
             new BrushSizeSlider(this),
@@ -14,6 +14,8 @@ class UI {
             new BrushButton(this, new BasicPyoroBrush()),
             new BrushButton(this, new AdvancedPyoroBrush()),
         ];
+        // Select the starting brush
+        this.UIElements[1].select();
     }
 
     draw() {
@@ -48,6 +50,7 @@ class UI {
 
     handleInteractions() {
         this.UIElements.forEach(element => {
+            element.deselect();
             if (element.withinBounds(mouseX, mouseY)) element.mousePressed();
         });
     }

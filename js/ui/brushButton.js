@@ -4,6 +4,7 @@ class BrushButton extends UIElement {
     constructor(ui, brush) {
         super();
         this.brush = brush;
+        this.selected = false;
         
         this.diameter = 60;
         
@@ -27,7 +28,9 @@ class BrushButton extends UIElement {
         push();
         noFill();
         stroke(UI_COLOR);
-        ellipse(this.x, this.y, this.diameter);
+        let selectWeight = 6;
+        strokeWeight(STROKE_WEIGHT + selectWeight*this.selected)
+        ellipse(this.x, this.y, this.diameter, this.diameter, 50);
         pop();
     }
 
@@ -43,6 +46,15 @@ class BrushButton extends UIElement {
     }
 
     mousePressed() {
+        this.select();
+    }
+    
+    select() {
+        this.selected = true;
         activeBrush = brushes[this.order];
+    }
+
+    deselect() {
+        this.selected = false;
     }
 }

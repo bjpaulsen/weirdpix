@@ -9,11 +9,19 @@ class UIElement {
     draw() {
         throw new Error("Method 'draw' must be implemented by a subclass.");
     }
-
+    
     mousePressed() {
         throw new Error("Method 'mousePressed' must be implemented by a subclass.");
     }
-
+    
+    // optional for a subclass to implement
+    select() {
+    }
+    
+    // optional for a subclass to implement
+    deselect() {
+    }
+    
     // returns true if the given coordinates are within the UI element's bounds
     withinBounds(x, y) {
         return x >= this.x1 && x <= this.x2 && y >= this.y1 && y <= this.y2;

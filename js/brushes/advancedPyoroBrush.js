@@ -1,5 +1,4 @@
 class AdvancedPyoroBrush extends Brush {
-
     constructor() {
         super();
         this.pyoro = loadModel('assets/models/pyoro.obj');
@@ -25,7 +24,7 @@ class AdvancedPyoroBrush extends Brush {
         this.callsTillSpray--;
     }
 
-    resetTimer() {
-        this.callsTillSpray = 20;
+    reset() {
+        this.callsTillSpray = 0;
     }
 }

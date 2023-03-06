@@ -1,7 +1,8 @@
 let brushSize = 30;
 
-class BrushSizeSlider {
+class BrushSizeSlider extends UIElement {
     constructor(ui) {
+        super();
         this.min = 10;
         this.max = 200;
                 
@@ -30,11 +31,6 @@ class BrushSizeSlider {
         ellipse(this.lineX, map(brushSize, this.min, this.max, this.y2, this.y1), brushSize);
 
         pop();
-    }
-
-    // returns true if the given coordinates are within the UI element's bounds
-    withinBounds(x, y) {
-        return x >= this.x1 && x <= this.x2 && y >= this.y1 && y <= this.y2;
     }
 
     // adjusts the brush size when the player interacts with the slider

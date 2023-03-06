@@ -14,4 +14,8 @@ class Brush {
     drawAtXY(x, y) {
         throw new Error("Method 'drawAtXY' must be implemented by a subclass.");
     }
+
+    // optional method for brushes that need to be reset
+    reset() {
+    }
 }

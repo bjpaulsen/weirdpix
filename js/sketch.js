@@ -19,17 +19,17 @@ function setup() {
     let canvas = createCanvas(canvasContainer.width(), canvasContainer.height(), WEBGL);
     canvas.parent("canvas-container");
 
-    ui = new UI();
     brushes = [
         new BasicBrush(),
         new BasicPyoroBrush(),
         new AdvancedPyoroBrush()
     ];
+    ui = new UI();
 
     cam = createCamera();
     cam.move((width/2),height/2,0);
 
-    activeBrush = brushes[2];
+    activeBrush = brushes[1];
 
     background(backgroundColor);
     rectMode(CORNERS);

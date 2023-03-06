@@ -37,6 +37,7 @@ class BrushButton extends UIElement {
         brushSize = iconSize;
 
         this.brush.drawAtXY(this.x, this.y);
+        this.brush.reset();
 
         brushSize = rememberBrushSize;
     }

@@ -9,8 +9,11 @@ class UI {
 
         this.UIElements = [
             new BrushSizeSlider(this),
+            // ADD ALL BRUSH BUTTONS YOU WANT ON THE UI HERE (I'm sorry i tried to find a better way but deepcloning is JANK in javascript)
+            new BrushButton(this, new BasicBrush()),
+            new BrushButton(this, new BasicPyoroBrush()),
+            new BrushButton(this, new AdvancedPyoroBrush()),
         ];
-        brushes.forEach(brush => this.UIElements.push(new BrushButton(this, Object.assign({}, brush))));
     }
 
     draw() {

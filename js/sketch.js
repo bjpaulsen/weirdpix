@@ -3,7 +3,7 @@
 // Date:
 
 // Constants
-let STROKE_WEIGHT = 4;
+let STROKE_WEIGHT = 6;
 let UI_COLOR = 0;
 
 // Globals

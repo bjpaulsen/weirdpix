@@ -4,6 +4,13 @@ html {
     margin: 0 0 0 0;
 }
 
+* {
+    font-family: "Figtree";
+    /* font-weight: 900; */
+    font-size: 44px;
+    line-height:.6em;
+}
+
 /* Set the canvas element to be the full size of the window */
 canvas {
     width: 100%;
@@ -15,6 +22,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+h1 {
+    margin-left: 120px;
 }
 
 #canvas-container {

@@ -7,6 +7,7 @@ class UI {
         this.x2 = width - 220;
         this.y2 = (height-STROKE_WEIGHT/2)-50;
 
+        // all the UI elements around the edges of the canvas
         this.UIElements = [
             new BrushSizeSlider(this),
             // ADD ALL BRUSH BUTTONS YOU WANT ON THE UI HERE (I'm sorry i tried to find a better way but deepcloning is JANK in javascript)

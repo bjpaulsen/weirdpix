@@ -24,7 +24,8 @@ function setup() {
     brushes = [
         new BasicBrush(),
         new BasicPyoroBrush(),
-        new AdvancedPyoroBrush()
+        new AdvancedPyoroBrush(),
+        new Eraser(),
     ];
     ui = new UI();
     activeBrush = brushes[0];

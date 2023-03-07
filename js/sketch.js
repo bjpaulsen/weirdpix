@@ -60,3 +60,9 @@ function mousePressed() {
 function mouseWheel(event) {
     ui.UIElements[0].mouseWheel(event);
 }
+
+function keyPressed(){
+    if (keyCode === DELETE){
+        background(backgroundColor);
+    }
+}

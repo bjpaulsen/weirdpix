@@ -4,6 +4,6 @@ class BasicBrush extends Brush {
     }
 
     drawAtXY(x, y) {
-        ellipse(x, y, brushSize, brushSize);
+        ellipse(x, y, brushSize, brushSize, 50);
     }
 }

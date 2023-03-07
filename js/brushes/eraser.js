@@ -6,7 +6,7 @@ class Eraser extends Brush {
     drawAtXY(x, y) {
         push();
         fill(backgroundColor);
-        ellipse(x, y, brushSize, brushSize);
+        ellipse(x, y, brushSize, brushSize, 50);
         pop();
     }
 }

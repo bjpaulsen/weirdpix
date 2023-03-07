@@ -8,7 +8,7 @@ class AdvancedPyoroBrush extends Brush {
     drawAtXY(x, y) {
         if (this.callsTillSpray <= 0) {
             push();
-            translate(x, y-brushSize/2, 0);
+            translate(x, y, 0);
             scale(brushSize/100);
             noStroke();
 

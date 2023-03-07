@@ -37,4 +37,8 @@ class BrushSizeSlider extends UIElement {
     mousePressed() {
         brushSize = map(constrain(mouseY, this.y1, this.y2), this.y2, this.y1, this.min, this.max);
     }
+
+    mouseWheel(event) {
+        brushSize = constrain(brushSize + event.delta, this.min, this.max);
+    }
 }

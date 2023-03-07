@@ -4,13 +4,6 @@ html {
     margin: 0 0 0 0;
 }
 
-* {
-    font-family: "Figtree";
-    /* font-weight: 900; */
-    font-size: 44px;
-    line-height:.6em;
-}
-
 /* Set the canvas element to be the full size of the window */
 canvas {
     width: 100%;
@@ -26,9 +19,13 @@ body {
 
 h1 {
     margin-left: 120px;
+    font-family: "Figtree";
+    /* font-weight: 900; */
+    font-size: 44px;
+    line-height:.6em;
 }
 
 #canvas-container {
     width: calc(100vw);
-    height: calc(100vh - 100px);
+    height: calc(100vh - 130px);
 }

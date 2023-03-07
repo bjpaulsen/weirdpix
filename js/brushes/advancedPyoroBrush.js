@@ -12,9 +12,9 @@ class AdvancedPyoroBrush extends Brush {
             scale(brushSize/100);
             noStroke();
 
-            rotateX(random(-PI/4, PI/4));
-            rotateY(random(-PI/4, PI/4));
-            rotateZ(random(-PI/4, PI/4));
+            rotateX(random(PI));
+            rotateY(random(PI));
+            rotateZ(random(PI));
 
             fill(random(0,255),random(0,255),random(0,255));
             this.model = model(this.pyoro);

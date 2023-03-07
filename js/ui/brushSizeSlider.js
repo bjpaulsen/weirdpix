@@ -38,6 +38,7 @@ class BrushSizeSlider extends UIElement {
         brushSize = map(constrain(mouseY, this.y1, this.y2), this.y2, this.y1, this.min, this.max);
     }
 
+    // adjusts the brush size with the scroll wheel
     mouseWheel(event) {
         brushSize = constrain(brushSize + event.delta, this.min, this.max);
     }

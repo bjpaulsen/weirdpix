@@ -8,13 +8,13 @@ class AdvancedPyoroBrush extends Brush {
     drawAtXY(x, y) {
         if (this.callsTillSpray <= 0) {
             push();
-            translate(x, y-brushSize/2, 0);
+            translate(x, y, 0);
             scale(brushSize/100);
             noStroke();
 
-            rotateX(random(-PI/4, PI/4));
-            rotateY(random(-PI/4, PI/4));
-            rotateZ(random(-PI/4, PI/4));
+            rotateX(random(PI));
+            rotateY(random(PI));
+            rotateZ(random(PI));
 
             fill(random(0,255),random(0,255),random(0,255));
             this.model = model(this.pyoro);

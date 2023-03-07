@@ -56,3 +56,7 @@ function mousePressed() {
     if (ui.withinDrawZone(mouseX, mouseY)) activeBrush.draw();
     else ui.handleInteractions();
 }
+
+function mouseWheel(event) {
+    ui.UIElements[0].mouseWheel(event);
+}

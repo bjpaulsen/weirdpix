@@ -53,7 +53,7 @@ function mouseDragged() {
 }
 
 function mousePressed() {
-    if (ui.withinDrawZone(mouseX, mouseY)) activeBrush.draw();
+    if (ui.withinDrawZone(mouseX, mouseY) && !ui.UIElements[1].selected) activeBrush.draw();
     else ui.handleInteractions();
 }
 

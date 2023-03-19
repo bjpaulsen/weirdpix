@@ -10,16 +10,20 @@ class BlushBrush extends Brush {
     }
 
     drawAtXY(x, y) {
+
+        this.sinOffset = sin(Date.now() / this.timeScale) * brushSize;
+        this.cosOffset = cos(Date.now() / this.timeScale) * brushSize;
+
         push();
 
-        translate(sin(Date.now() / this.timeScale) * brushSize, cos(Date.now() / this.timeScale) * brushSize, 0);
+        translate(this.sinOffset, this.cosOffset, 0);
         image(this.blushImg, x-brushSize/2, y-brushSize/2, brushSize, brushSize);
 
         pop();
 
         push();
 
-        translate(cos(Date.now() / this.timeScale) * brushSize, sin(Date.now() / this.timeScale) * brushSize, 0);
+        translate(this.cosOffset, this.sinOffset, 0);
         image(this.eatImg, x-brushSize/2, y-brushSize/2, brushSize, brushSize);
 
         pop();

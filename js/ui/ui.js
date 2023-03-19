@@ -18,6 +18,7 @@ class UI {
             new BrushButton(this, new AdvancedPyoroBrush()),
             new BrushButton(this, new SparkleBrush()),
             new BrushButton(this, new BlushBrush()),
+            new BrushButton(this, new CameraBrush()),
             new BrushButton(this, new Eraser()),
         ];
         this.UIElements = this.UIElements.concat(this.brushButtons);

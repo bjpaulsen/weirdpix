@@ -26,6 +26,7 @@ function setup() {
         new BasicPyoroBrush(),
         new AdvancedPyoroBrush(),
         new SparkleBrush(),
+        new BlushBrush(),
         new Eraser(),
     ];
     ui = new UI();

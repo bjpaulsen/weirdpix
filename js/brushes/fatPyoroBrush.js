@@ -30,7 +30,7 @@ class FatPyoroBrush extends Brush {
     }
 
     drawAtXY(x, y) {
-        let speed = 0.035
+        let speed = 0.035;
         push();
         translate(x, y);
         scale( sin(frameCount*speed) + 2 );

@@ -1,3 +1,4 @@
+/*
 let kirbies;
 let x;
 let y;
@@ -21,4 +22,19 @@ function drawKirbies() {
   y=random(kirbies.height);
   let pixelRegion=kirbies.get(x,y,80,80);
   image(pixelRegion,mouseX,mouseY,80,80);
+}
+*/
+class KirbySnapshotBrush extends Brush {
+    constructor() {
+        super();
+        this.kirby = loadImage('assets/images/kirbyMany.png');
+    }
+
+    drawAtXY(x, y) {
+        frameRate(8);
+        let Px=random(this.kirby.width);
+        let Py=random(this.kirby.height);
+        let pixelRegion=this.kirby.get(Px,Py,80,80);
+        image(pixelRegion,x,y,80,80);
+    }
 }

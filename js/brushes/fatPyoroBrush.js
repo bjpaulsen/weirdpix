@@ -1,3 +1,4 @@
+/*
 let brush;
 
 function setup() {
@@ -8,16 +9,32 @@ function setup() {
 
 function draw() {
   if(mouseIsPressed){
-    drawPyoro(frameCount % 360, 100, 0.035);
+    drawPyoro(100, 0.035);
   }
 }
 
 
-function drawPyoro(col, brushSize, speed){
+function drawPyoro(brushSize, speed){
   push();
   translate(mouseX, mouseY);
   scale( sin(frameCount*speed) + 2 );
-  //rotate(frameCount*0.01);
- 	image(brush, 0, 0, brushSize,brushSize); 
+  image(brush, 0, 0, brushSize,brushSize); 
   pop();
+}
+*/
+
+class FatPyoroBrush extends Brush {
+    constructor() {
+        super();
+        this.Fpyoro = loadImage('assets/images/pyoro1.png');
+    }
+
+    drawAtXY(x, y) {
+        let speed = 0.035
+        push();
+        translate(x, y);
+        scale( sin(frameCount*speed) + 2 );
+ 	    image(this.Fpyoro, 0, 0, brushSize,brushSize); 
+        pop();
+    }
 }

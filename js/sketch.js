@@ -12,6 +12,8 @@ let activeBrush; // the currently selected brush
 let canvasContainer;
 let ui;
 let backgroundColor = 255;
+let callFromDrag = false;
+let prevCanvas = [];
 
 function setup() {
     // place our canvas, making it fit our container
@@ -52,12 +54,17 @@ function draw() {
 }
 
 function mouseDragged() {
-    mousePressed();
+    callFromDrag = true;
+    if (!ui.UIElements[1].withinBounds(mouseX, mouseY)) mousePressed();
 }
 
 function mousePressed() {
+    if (!callFromDrag && ui.withinDrawZone(mouseX, mouseY)) {
+        prevCanvas.push(get());
+    }
     if (ui.withinDrawZone(mouseX, mouseY)) activeBrush.draw();
     else ui.handleInteractions();
+    callFromDrag = false;
 }
 
 function mouseWheel(event) {

@@ -30,6 +30,8 @@ function setup() {
         new SparkleBrush(),
         new BlushBrush(),
         new CameraBrush(),
+        new FatPyoroBrush(),
+        new KirbySnapshotBrush(),
         new Eraser(),
     ];
     ui = new UI();

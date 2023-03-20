@@ -2,6 +2,8 @@ class UndoButton extends UIElement {
     constructor(ui) {
         super();
 
+        this.undoImage = loadImage('assets/images/undo.png');
+
         this.diameter = 60;
 
         this.x = ui.x1/2;
@@ -15,6 +17,7 @@ class UndoButton extends UIElement {
 
     draw() {
         this.drawButtonCircle();
+        image(this.undoImage, this.x1+5, this.y1+5, 50, 50)
     }
 
     drawButtonCircle() {

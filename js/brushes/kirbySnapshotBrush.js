@@ -34,7 +34,7 @@ class KirbySnapshotBrush extends Brush {
         frameRate(8);
         let Px=random(this.kirby.width);
         let Py=random(this.kirby.height);
-        let pixelRegion=this.kirby.get(Px,Py,80,80);
-        image(pixelRegion,x,y,80,80);
+        let pixelRegion=this.kirby.get(Px,Py,75,75);
+        image(pixelRegion,x-20-brushSize/2, y-20-brushSize/2,75,75);
     }
 }

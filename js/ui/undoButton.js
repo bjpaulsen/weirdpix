@@ -6,8 +6,8 @@ class UndoButton extends UIElement {
 
         this.diameter = 60;
 
-        this.x = ui.x1/2;
-        this.y = ui.y2 - 30;
+        this.x = ui.x2+100;
+        this.y = ui.y1+40;
 
         this.x1 = this.x-this.diameter/2;
         this.y1 = this.y-this.diameter/2;

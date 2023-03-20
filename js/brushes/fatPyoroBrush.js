@@ -34,7 +34,7 @@ class FatPyoroBrush extends Brush {
         push();
         translate(x, y);
         scale( sin(frameCount*speed) + 2 );
- 	    image(this.Fpyoro, 0, 0, brushSize,brushSize); 
+ 	    image(this.Fpyoro, -15, -15, brushSize,brushSize); 
         pop();
     }
 }

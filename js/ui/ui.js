@@ -10,6 +10,7 @@ class UI {
         // all the UI elements around the edges of the canvas
         this.UIElements = [
             new BrushSizeSlider(this),
+            new UndoButton(this),
         ];
         this.brushButtons = [
             // ADD ALL BRUSH BUTTONS YOU WANT ON THE UI HERE (I'm sorry i tried to find a better way but deepcloning is JANK in javascript)
